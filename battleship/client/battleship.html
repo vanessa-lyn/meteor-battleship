@@ -1,0 +1,112 @@
+<!-- //////////////////////////// 
+    Name: Battleship.html
+    Date: 6/13
+    Descrip: Page Layout and templates for the app.
+    Notes:
+        - will probably break up as this grows
+        - http://net.tutsplus.com/tutorials/javascript-ajax/prototyping-with-meteor/?search_index=2
+ //////////////////////////// -->
+
+<head>
+  <title>Battleship</title>
+</head>
+
+<body>
+     {{loginButtons}}
+
+    {{renderPage}}
+    
+    {{> players}}
+    <br/><br/>
+    {{> games}}
+    
+</body>
+
+
+<template name="homeTemplate">
+    <div>
+        <h1>Welcome to Battleship</h1>
+        <p>Please login to play</p>
+    </div>
+</template>
+
+
+<template name="gameTemplate">
+    <h1>you're in the Battlfield now!</h1></p>
+  <div class="span6">
+    
+    {{#with gameTemplate}}
+      
+      <table id="chat" class="table table-striped">
+        <tbody>
+          {{#each war}}
+            <tr>
+              <td>{{player}} :</td>
+              <td>{{score}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{/with}}
+  </div>
+</template>
+
+
+<template name="games">
+   <form name="new_row">
+    <table id="games" class="table table-striped span6">
+      <thead>
+        <tr>
+          <th>Game Name</th>
+          <th>Players</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+        <tbody>
+        {{#each games}}
+          <tr>
+            <td>{{gameId}}</td>
+            <td>{{currentPlayers}}</td>
+            <td><a href="{{gameUrl}}" class="btn btn-inverse pull-right">
+              <i class="icon-eye-open"></i> Watch</a>
+                
+            </td>
+          </tr>
+        {{/each}}
+        <tr>
+          <td colspan="3">
+            <input type="text" name="name" placeholder="Create a new battlefield"></input>
+            <button type="submit" class="btn btn-primary pull-right">
+              <i class="icon-plus"></i> Enter Battlefield</a>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form> 
+</template>
+
+<template name="players">
+   <form name="new_row">
+    <table id="players" class="table table-striped span6">
+      <thead>
+        <tr>
+          <th>Player Name</th>
+          <th>Status</th>
+          <th>Request</th>
+        </tr>
+      </thead>
+        <tbody>
+        {{#each players}}
+          <tr>
+            <td>{{userName}}</td>
+            <td>{{status}}</td>
+            <td><button type="submit" class="btn btn-inverse">
+              <i class="icon-user"></i> Challenge
+            </button></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </form> 
+</template>
