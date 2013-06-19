@@ -10,12 +10,24 @@
 ////////////////////////// -->
 
 <!-- Home Page Template -->
+<template name="loginTemplate">
+    <body>
+        <h1>BattleShip - Meteor</h1>
+        <p>Please login to play</p>
+        {{loginButtons}}
+    </body>
+</template>
+
+
+<!-- Home Page Template -->
 <template name="homeTemplate">
+    {{loginButtons}}
     <h1>BattleShip - Meteor</h1>
     <p>Like the game? Tweet me at {{twitterName}}</p>
     <h2>List Players</h2>
     <h2>List of games</h2>
 
+<br/>
     <a href="#"> View my profile</a>
 </template>
 

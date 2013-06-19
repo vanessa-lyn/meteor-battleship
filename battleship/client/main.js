@@ -8,6 +8,7 @@
 //////////////////////////
 
 Meteor.startup(function(){
+    Router.addRoute('/', 'loginTemplate');
     Router.addRoute('/home', 'homeTemplate');
     Router.addRoute('/user/:username', 'profileTemplate');
     Router.addRoute('/battle/:battlenum', 'gameTemplate');
