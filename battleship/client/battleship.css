@@ -1,1 +1,29 @@
 /* CSS declarations go here */
+
+.header{
+    background-color: grey;
+    height: 50px;
+}
+.header h1 {
+    color: white;
+    float: left;
+    margin-top: 0px;
+    margin-left: 5px;
+    font-size: 32px;
+}
+.header .btn{
+    margin: 10px;
+}
+a.login-link-text{
+    color: white;
+}
+
+#login-buttons a, .accounts-dialog a{
+    text-decoration: none;
+}
+
+
+#notifications {
+    text-align: center;
+    padding: 10px;
+}

@@ -12,42 +12,41 @@
 </head>
 
 <body>
-     {{loginButtons}}
-
+    <div class="header">
+        <h1>Battleship</h1>
+        <div class="btn btn-primary pull-right">{{loginButtons align="right"}}</div>
+    </div>
     {{renderPage}}
-    
-    {{> players}}
-    <br/><br/>
-    {{> games}}
-    
 </body>
 
 
 <template name="homeTemplate">
-    <div>
-        <h1>Welcome to Battleship</h1>
-        <p>Please login to play</p>
+    
+    <div id="notifications" class="row">
+    <div class="span12">
+        <br/>
+        <!-- <p>Please login to play</p> -->
     </div>
+    </div> 
+
+    <div class="row">
+    <div class="span6">
+        {{> games}}
+    </div>
+    <div class="span6">
+        {{> players}}
+    </div>
+    </div>
+
+    <br/><br/>
+    
 </template>
 
 
 <template name="gameTemplate">
     <h1>you're in the Battlfield now!</h1></p>
   <div class="span6">
-    
-    {{#with gameTemplate}}
-      
-      <table id="chat" class="table table-striped">
-        <tbody>
-          {{#each war}}
-            <tr>
-              <td>{{player}} :</td>
-              <td>{{score}}</td>
-            </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    {{/with}}
+
   </div>
 </template>
 
@@ -67,7 +66,7 @@
           <tr>
             <td>{{gameId}}</td>
             <td>{{currentPlayers}}</td>
-            <td><a href="{{gameUrl}}" class="btn btn-inverse pull-right">
+            <td><a href="/battle/{{gameId}}" class="btn btn-inverse pull-right">
               <i class="icon-eye-open"></i> Watch</a>
                 
             </td>
