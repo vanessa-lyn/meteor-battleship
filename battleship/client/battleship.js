@@ -11,7 +11,24 @@ Meteor.Router.add({
 /////////////////////////////
 //STATIC DATA: Prototyping phase 
 
+
+
 /////////////////////////////
+
+
+//Notification Messaging
+Template.homeTemplate.notification = function(){
+    //check for the user data and it's properties
+    var user = Meteor.userId() && Meteor.user() && Meteor.user().profile ? Meteor.user().profile.name : "";
+
+    if(user !== null){
+        console.log(user);
+      return "Welcome back "+user+"!";
+    }
+    else{
+      return "Please log in to play.";
+    }
+}
 
 
 //helpers to pull in the data into the app

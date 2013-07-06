@@ -1,7 +1,12 @@
 Games = new Meteor.Collection('games');
 Players = new Meteor.Collection('players');
 
-if(Meteor.isServer && Games.find().count() == 0) {
+
+
+
+
+
+/*if(Meteor.isServer && Games.find().count() == 0) {
     var games = [
       {gameId: 'COD', currentPlayers: "Soap vs. Price", gameUrl: '/battle/cod', 
         war:[
@@ -17,10 +22,8 @@ if(Meteor.isServer && Games.find().count() == 0) {
         Games.insert(game);
     });
 
-}
-
-
-if(Meteor.isServer && Players.find().count() == 0) {
+}*/
+/*if(Meteor.isServer && Players.find().count() == 0) {
     
     var players = [
       {userName: 'ME', status: "..."},
@@ -42,4 +45,4 @@ if(Meteor.isServer && Players.find().count() == 0) {
         Players.insert(player);
     });
 
-}
+}*/
